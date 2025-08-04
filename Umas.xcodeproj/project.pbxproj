@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		0BE47AD92E39EF0100D28ED4 /* Umas */ = {
+		0BFB6CFF2E409D4900C79B7C /* Umas */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Umas;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 		0BE47ACE2E39EF0100D28ED4 = {
 			isa = PBXGroup;
 			children = (
-				0BE47AD92E39EF0100D28ED4 /* Umas */,
+				0BFB6CFF2E409D4900C79B7C /* Umas */,
 				0BE47AD82E39EF0100D28ED4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				0BE47AD92E39EF0100D28ED4 /* Umas */,
+				0BFB6CFF2E409D4900C79B7C /* Umas */,
 			);
 			name = Umas;
 			packageProductDependencies = (
