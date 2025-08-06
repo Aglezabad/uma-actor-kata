@@ -8,27 +8,44 @@
 import SwiftUI
 
 struct CharacterDetail: View {
-    var character: Character
+    @StateObject var characterViewModel: CharacterViewModel
+    let name: String
 
     var body: some View {
-        let borderColor = Color(hexadecimal: character.borderColor ?? "")
-        ScrollView {
-            VStack {
+        if let character: Character = characterViewModel.characters
+            .first(where: { $0.name == name }) {
+            let borderColor = Color(hexadecimal: character.borderColor ?? "")
+            ScrollView {
                 if let image: UIImage = .init(named: character.image ?? "") {
-                    CircleImage(image: image, borderColor: borderColor ?? .gray)
-                        .frame(maxWidth: 250)
+                    VStack {
+                        CircleImage(image: image, borderColor: borderColor ?? .gray)
+                            .frame(maxWidth: 250)
+                    }
+                    .frame(maxWidth: .infinity)
                 }
-                Text(character.name).font(.title)
-                Spacer()
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text(character.name).font(.title)
+                        FavouriteButton(isSet: character.isFavourite) { enabled in
+                            if enabled {
+                                characterViewModel.addFavourite(character)
+                            } else {
+                                characterViewModel.removeFavourite(character)
+                            }
+                        }
+                    }
+                }
+                .padding()
+                .frame(maxWidth: .infinity)
             }
-            .padding()
+            .navigationTitle(character.name)
+            .navigationBarTitleDisplayMode(.inline)
+        } else {
+            Text("El personaje con nombre \(name) no existe")
         }
-        .navigationTitle(character.name)
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 #Preview {
-    var characters: [Character] = UmaSDK.shared.retrieveCharacters()
-    CharacterDetail(character: characters[0])
+    CharacterDetail(characterViewModel: .init(), name: "Agnes Tachyon")
 }

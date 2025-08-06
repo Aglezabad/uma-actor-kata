@@ -7,4 +7,6 @@
 
 internal protocol CharacterRepository: Repository {
     func retrieveCharacters() throws -> [Character]
+    func addFavourite(_ character: Character) throws
+    func removeFavourite(_ character: Character) throws
 }

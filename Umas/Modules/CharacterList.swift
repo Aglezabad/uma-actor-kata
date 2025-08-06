@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CharacterList: View {
     @State private var showFavouritesOnly: Bool = false
-    var characters: [Character] = UmaSDK.shared.retrieveCharacters()
+    @StateObject private var characterViewModel: CharacterViewModel = .init()
     var filteredCharacters: [Character] {
-        characters.filter { character in
+        characterViewModel.characters.filter { character in
             !showFavouritesOnly || character.isFavourite
         }
     }
@@ -24,7 +24,7 @@ struct CharacterList: View {
                 }
                 ForEach(filteredCharacters, id: \.name) { character in
                     NavigationLink {
-                        CharacterDetail(character: character)
+                        CharacterDetail(characterViewModel: characterViewModel, name: character.name)
                     } label: {
                         ListElement(listable: character)
                     }

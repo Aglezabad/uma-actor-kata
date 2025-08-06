@@ -8,10 +8,10 @@
 internal final class UmaSDK {
     static let shared = UmaSDK()
 
-    let characterRepository: CharacterRepository
+    private let characterRepository: CharacterRepository
 
     private init() {
-        characterRepository = CharacterDataRepository(rawDataSource: .init())
+        characterRepository = CharacterDataRepository(diskDataSource: .init(), rawDataSource: .init())
     }
 
     func retrieveCharacters() -> [Character] {
@@ -19,6 +19,22 @@ internal final class UmaSDK {
             return try characterRepository.retrieveCharacters()
         } catch {
             return []
+        }
+    }
+
+    func addFavouriteCharacter(_ character: Character) {
+        do {
+            try characterRepository.addFavourite(character)
+        } catch {
+            print("Adding favourite failed")
+        }
+    }
+
+    func removeFavouriteCharacter(_ character: Character) {
+        do {
+            try characterRepository.removeFavourite(character)
+        } catch {
+            print("Removing favourite failed")
         }
     }
 }
