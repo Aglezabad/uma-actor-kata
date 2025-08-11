@@ -14,12 +14,21 @@ Consta de los siguientes ejercicios:
 
 Los ejercicios resueltos se encuentran en las ramas exercise1 para el primer ejercicio, exercise2 para el segundo y exercise3 para el tercero. Si al completar el ejercicio te encuentras diferencias con respecto al resuelto, eso no implica que esté mal. Se puede llegar a resultados válidos diferentes.
 
-## Flujo de la app
+## Flujo de la app
 
 La microaplicación de ejemplo es un listado de personajes de Uma Musume. En el listado se encuentra una imagen de cada personaje, su nombre y si el usuario ha marcado como favorito.
 
+<div style="margin: 0 auto;"><img width="480" src="./Screenshots/simulator_screenshot_DA3BFCA3-4506-434E-AA0E-7B8C69E108EF.png"/></div>
+
 El listado incluye una opción para solo mostrar los personajes favoritos.
 
+<div style="margin: 0 auto;"><img width="480" src="./Screenshots/simulator_screenshot_E56394BC-F6EB-458D-8EF2-C557C000B8AB.png"/></div>
+
 Pulsando en un elemento de la lista se abre el detalle que, para este ejemplo, contiene lo mismo que el listado en otra disposición. La estrella de favoritos es un botón que permite marcar o desmarcar como tal el personaje.
+
+<div style="margin: 0 auto;">
+  <img width="480" src="./Screenshots/simulator_screenshot_9C5EC727-7717-41DE-8537-7B4E3886B1D4.png"/>
+  <img width="480" src="./Screenshots/simulator_screenshot_B2564D50-68EE-4A3E-82A2-08656B8DF60C.png"/>
+</div>
 
 
