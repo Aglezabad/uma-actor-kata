@@ -14,18 +14,18 @@ internal class CharacterDataRepository: CharacterRepository {
         self.rawDataSource = rawDataSource
     }
 
-    func retrieveCharacters() throws -> [Character] {
-        var characters: [Character] = try rawDataSource.retrieveCharacters()
-        let favourites: Set<String> = try diskDataSource.retrieveAllFavourites()
+    func retrieveCharacters() async throws -> [Character] {
+        let favourites: Set<String> = try await diskDataSource.retrieveAllFavourites()
+        var characters: [Character] = try await rawDataSource.retrieveCharacters()
         characters.indices.forEach({ characters[$0].isFavourite = favourites.contains(characters[$0].name) })
         return characters
     }
 
-    func addFavourite(_ character: Character) throws {
-        try diskDataSource.addFavourite(character)
+    func addFavourite(_ character: Character) async throws {
+        try await diskDataSource.addFavourite(character)
     }
 
-    func removeFavourite(_ character: Character) throws {
-        try diskDataSource.removeFavourite(character)
+    func removeFavourite(_ character: Character) async throws {
+        try await diskDataSource.removeFavourite(character)
     }
 }

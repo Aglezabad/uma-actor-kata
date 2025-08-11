@@ -34,6 +34,9 @@ struct CharacterList: View {
         } detail: {
             Text("Selecciona un personaje")
         }
+        .task {
+            characterViewModel.refreshCharacterList()
+        }
     }
 }
 

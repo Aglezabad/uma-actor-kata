@@ -33,9 +33,12 @@ struct ListElement: View {
 }
 
 #Preview {
-    let characters: [Character] = UmaSDK.shared.retrieveCharacters()
+    var characters: [Character] = []
     Group {
-        ListElement(listable: characters[0])
-        ListElement(listable: characters[1])
+        if let character = characters.first {
+            ListElement(listable: character)
+        }
+    }.task {
+        characters = await UmaSDK.shared.retrieveCharacters()
     }
 }

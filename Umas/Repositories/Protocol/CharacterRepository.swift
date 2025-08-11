@@ -6,7 +6,7 @@
 //
 
 internal protocol CharacterRepository: Repository {
-    func retrieveCharacters() throws -> [Character]
-    func addFavourite(_ character: Character) throws
-    func removeFavourite(_ character: Character) throws
+    func retrieveCharacters() async throws -> [Character]
+    func addFavourite(_ character: Character) async throws
+    func removeFavourite(_ character: Character) async throws
 }

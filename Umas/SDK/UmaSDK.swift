@@ -14,25 +14,25 @@ internal final class UmaSDK {
         characterRepository = CharacterDataRepository(diskDataSource: .init(), rawDataSource: .init())
     }
 
-    func retrieveCharacters() -> [Character] {
+    func retrieveCharacters() async -> [Character] {
         do {
-            return try characterRepository.retrieveCharacters()
+            return try await characterRepository.retrieveCharacters()
         } catch {
             return []
         }
     }
 
-    func addFavouriteCharacter(_ character: Character) {
+    func addFavouriteCharacter(_ character: Character) async {
         do {
-            try characterRepository.addFavourite(character)
+            try await characterRepository.addFavourite(character)
         } catch {
             print("Adding favourite failed")
         }
     }
 
-    func removeFavouriteCharacter(_ character: Character) {
+    func removeFavouriteCharacter(_ character: Character) async {
         do {
-            try characterRepository.removeFavourite(character)
+            try await characterRepository.removeFavourite(character)
         } catch {
             print("Removing favourite failed")
         }

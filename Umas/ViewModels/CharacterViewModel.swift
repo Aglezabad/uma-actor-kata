@@ -8,15 +8,29 @@
 import Foundation
 
 internal final class CharacterViewModel: ObservableObject {
-    @Published var characters: [Character] = UmaSDK.shared.retrieveCharacters()
+    @Published var characters: [Character] = []
+
+    func refreshCharacterList() {
+        Task { @MainActor in
+            await characters = UmaSDK.shared.retrieveCharacters()
+        }
+    }
 
     func addFavourite(_ character: Character) {
-        UmaSDK.shared.addFavouriteCharacter(character)
-        characters = UmaSDK.shared.retrieveCharacters()
+        Task {
+            await UmaSDK.shared.addFavouriteCharacter(character)
+            Task { @MainActor in
+                await characters = UmaSDK.shared.retrieveCharacters()
+            }
+        }
     }
 
     func removeFavourite(_ character: Character) {
-        UmaSDK.shared.removeFavouriteCharacter(character)
-        characters = UmaSDK.shared.retrieveCharacters()
+        Task {
+            await UmaSDK.shared.removeFavouriteCharacter(character)
+            Task { @MainActor in
+                await characters = UmaSDK.shared.retrieveCharacters()
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@
 //
 
 internal final class CharacterRawDataSource: RawDataSource {
-    func retrieveCharacters() throws -> [Character] {
+    func retrieveCharacters() async throws -> [Character] {
         try retrieveJSONData(fileName: "umamusume", type: [Character].self) ?? []
     }
 }
