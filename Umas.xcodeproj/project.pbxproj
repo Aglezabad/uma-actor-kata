@@ -6,11 +6,23 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0B41BFEA2E49DAD40029C213 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B41BFE92E49DACC0029C213 /* README.md */; };
+		0B41C0812E49E7FC0029C213 /* AboutActors.md in Resources */ = {isa = PBXBuildFile; fileRef = 0B41C0802E49E7E50029C213 /* AboutActors.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		0B41BFE92E49DACC0029C213 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0B41C0802E49E7E50029C213 /* AboutActors.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AboutActors.md; sourceTree = "<group>"; };
 		0BE47AD72E39EF0100D28ED4 /* Umas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		0B41BFEB2E49DADC0029C213 /* Screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		0BFB6CFF2E409D4900C79B7C /* Umas */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Umas;
@@ -32,6 +44,9 @@
 		0BE47ACE2E39EF0100D28ED4 = {
 			isa = PBXGroup;
 			children = (
+				0B41C0802E49E7E50029C213 /* AboutActors.md */,
+				0B41BFEB2E49DADC0029C213 /* Screenshots */,
+				0B41BFE92E49DACC0029C213 /* README.md */,
 				0BFB6CFF2E409D4900C79B7C /* Umas */,
 				0BE47AD82E39EF0100D28ED4 /* Products */,
 			);
@@ -61,6 +76,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				0B41BFEB2E49DADC0029C213 /* Screenshots */,
 				0BFB6CFF2E409D4900C79B7C /* Umas */,
 			);
 			name = Umas;
@@ -109,6 +125,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B41BFEA2E49DAD40029C213 /* README.md in Resources */,
+				0B41C0812E49E7FC0029C213 /* AboutActors.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
