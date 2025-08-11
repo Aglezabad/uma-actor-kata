@@ -5,7 +5,7 @@
 //  Created by Ángel González on 4/8/25.
 //
 
-internal class CharacterDataRepository: CharacterRepository {
+internal actor CharacterDataRepository: CharacterRepository {
     private let diskDataSource: CharacterDiskDataSource
     private let rawDataSource: CharacterRawDataSource
 

@@ -5,7 +5,7 @@
 //  Created by Ángel González on 5/8/25.
 //
 
-internal final class CharacterDiskDataSource: DiskDataSource {
+internal actor CharacterDiskDataSource: DiskDataSource {
     private let userDefaultsId: String = "uma_favourites"
 
     func addFavourite(_ character: Character) async throws {

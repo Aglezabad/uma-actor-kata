@@ -5,7 +5,7 @@
 //  Created by Ángel González on 4/8/25.
 //
 
-internal final class UmaSDK {
+internal actor UmaSDK {
     static let shared = UmaSDK()
 
     private let characterRepository: CharacterRepository

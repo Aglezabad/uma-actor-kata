@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 internal final class CharacterViewModel: ObservableObject {
     @Published var characters: [Character] = []
     private let characterActor: CharacterActor = .init()
