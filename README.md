@@ -1,10 +1,3 @@
-//
-//  README.md
-//  Umas
-//
-//  Created by Ángel González on 11/8/25.
-//
-
 # Kata de actores
 
 Este proyecto es una micro aplicación cuyo fin es ver cómo aplicar los actores al mismo.
